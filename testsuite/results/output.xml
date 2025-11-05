@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-11-04T18:07:30.401121" rpa="false" schemaversion="5">
+<suite id="s1" name="Get User" source="C:\Users\User\Documents\test-automate-assignment\test-automate-assignment\No-3\testsuite\get_user.robot">
+<kw name="Create ReqRes Session" owner="resources_get_user" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-11-04T18:07:30.533334" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=${FALSE}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-11-04T18:07:30.533131" elapsed="0.000365"/>
+</kw>
+<status status="PASS" start="2025-11-04T18:07:30.532781" elapsed="0.000788"/>
+</kw>
+<test id="s1-t1" name="Get user profile success (id=1)" line="9">
+<kw name="Get User Profile" owner="resources_get_user">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-11-04T18:07:30.904331" level="INFO">GET Request : url=https://reqres.in/api/users/1 
+ path_url=/api/users/1 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-11-04T18:07:30.904679" level="INFO">GET Response : url=https://reqres.in/api/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 04 Nov 2025 11:07:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Origin': 'http://localhost:5173', 'Etag': 'W/"334-JOZgDGSMKFdcho3+278oIhfV1XI"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '300', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=aX6YQa7Xw625N%2FdTZsNkvAuaqcop50Ak1jyyj8OElgk%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1762249932"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=aX6YQa7Xw625N%2FdTZsNkvAuaqcop50Ak1jyyj8OElgk%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1762249932"', 'Server': 'cloudflare', 'Vary': 'Origin, accept-encoding', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Powered-By': 'ReqRes.in - Deploy backends in 30 seconds', 'X-Reqres-Docs': 'https://reqres.in', 'X-Reqres-Message': 'This API is powered by ReqRes. Deploy your own backend in 30 seconds!', 'X-Reqres-Templates': 'https://app.reqres.in/templates', 'X-Reqres-Upgrade': 'https://app.reqres.in/upgrade', 'X-Request-Id': '83ace6d7-05ac-aacc-54b4-7d2c09f60184', 'X-Xss-Protection': '1; mode=block', 'Age': '4518', 'Cache-Control': 'max-age=14400', 'cf-cache-status': 'HIT', 'Content-Encoding': 'gzip', 'CF-RAY': '9993a5ef2a5a33d1-SIN'} 
+ body={"data":{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."},"_meta":{"powered_by":"🚀 ReqRes - Deploy backends in 30 seconds","upgrade_url":"https://app.reqres.in/upgrade","docs_url":"https://reqres.in","template_gallery":"https://app.reqres.in/templates","message":"This API is powered by ReqRes. Deploy your own backend in 30 seconds!","features":["30 Second Backend Templates","Custom API Endpoints","Data Persistence","Real-time Analytics"],"upgrade_cta":"Upgrade to Pro for unlimited requests, custom endpoints, and data persistence"}} 
+ </msg>
+<msg time="2025-11-04T18:07:30.904910" level="INFO">C:\Users\User\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-11-04T18:07:30.905711" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>reqres</arg>
+<arg>${USER_PATH}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.534316" elapsed="0.371472"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-11-04T18:07:30.905898" elapsed="0.000049"/>
+</return>
+<msg time="2025-11-04T18:07:30.906103" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<status status="PASS" start="2025-11-04T18:07:30.534143" elapsed="0.371986"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- GET USER SUCCESS (id=1) ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.906571" elapsed="0.000352"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${resp.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.907342" elapsed="0.000666"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response:\n${resp.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.908309" elapsed="0.000686"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-04T18:07:30.909656" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.909287" elapsed="0.000415"/>
+</kw>
+<kw name="Verify User Body (Success)" owner="resources_get_user">
+<kw name="Convert String To Json" owner="JSONLibrary">
+<msg time="2025-11-04T18:07:30.911474" level="INFO">${json} = {'data': {'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://reqres.in/img/faces/1-image.jpg'}, 'support': {'url': 'https://contentcaddy.io?ut...</msg>
+<var>${json}</var>
+<arg>${resp.text}</arg>
+<doc>Convert String to JSON object</doc>
+<status status="PASS" start="2025-11-04T18:07:30.910468" elapsed="0.001085"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-11-04T18:07:30.931004" level="INFO">${email} = ['george.bluth@reqres.in']</msg>
+<var>${email}</var>
+<arg>${json}</arg>
+<arg>$.data.email</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-11-04T18:07:30.911792" elapsed="0.019252"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-11-04T18:07:30.944423" level="INFO">${first} = ['George']</msg>
+<var>${first}</var>
+<arg>${json}</arg>
+<arg>$.data.first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-11-04T18:07:30.931184" elapsed="0.013272"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-11-04T18:07:30.958879" level="INFO">${last} = ['Bluth']</msg>
+<var>${last}</var>
+<arg>${json}</arg>
+<arg>$.data.last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-11-04T18:07:30.944576" elapsed="0.014336"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-11-04T18:07:30.970831" level="INFO">${avatar} = ['https://reqres.in/img/faces/1-image.jpg']</msg>
+<var>${avatar}</var>
+<arg>${json}</arg>
+<arg>$.data.avatar</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-11-04T18:07:30.959023" elapsed="0.011842"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${email[0]}</arg>
+<arg>${EXP_EMAIL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.971152" elapsed="0.000465"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${first[0]}</arg>
+<arg>${EXP_FIRST_NAME}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.971705" elapsed="0.000362"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${last[0]}</arg>
+<arg>${EXP_LAST_NAME}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.972139" elapsed="0.000334"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${avatar[0]}</arg>
+<arg>${EXP_AVATAR}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.972540" elapsed="0.000332"/>
+</kw>
+<arg>${resp}</arg>
+<status status="PASS" start="2025-11-04T18:07:30.910058" elapsed="0.062860"/>
+</kw>
+<status status="PASS" start="2025-11-04T18:07:30.533617" elapsed="0.439697"/>
+</test>
+<test id="s1-t2" name="Get user profile not found (id=1234)" line="18">
+<kw name="Get User Not Found" owner="resources_get_user">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-11-04T18:07:31.414232" level="INFO">GET Request : url=https://reqres.in/api/users/1234 
+ path_url=/api/users/1234 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-11-04T18:07:31.414515" level="INFO">GET Response : url=https://reqres.in/api/users/1234 
+ status=401, reason=Unauthorized 
+ headers={'Date': 'Tue, 04 Nov 2025 11:07:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Origin': 'http://localhost:5173', 'Etag': 'W/"1b-FQ1mIOMgD7jlZN53VsiSdXzsYTY"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '95', 'Ratelimit-Reset': '184', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=S5%2F%2Fnfhx%2FgVe53RtiCZ9UGLcA4QZmNTSD2d9pSBzSzs%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1762254451"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=S5%2F%2Fnfhx%2FgVe53RtiCZ9UGLcA4QZmNTSD2d9pSBzSzs%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1762254451"', 'Server': 'cloudflare', 'Vary': 'Origin, accept-encoding', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Request-Id': '36606edd-c041-ced0-0e4a-24b0bd279e76', 'X-Xss-Protection': '1; mode=block', 'cf-cache-status': 'BYPASS', 'CF-RAY': '9993a5f05d4f33d1-SIN'} 
+ body={"error":"Missing API key"} 
+ </msg>
+<msg time="2025-11-04T18:07:31.414690" level="INFO">C:\Users\User\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-11-04T18:07:31.415457" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
+<var>${resp}</var>
+<arg>reqres</arg>
+<arg>/users/${USER_ID_NOT_FOUND}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-11-04T18:07:30.974989" elapsed="0.440554"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-11-04T18:07:31.415713" elapsed="0.000111"/>
+</return>
+<msg time="2025-11-04T18:07:31.416151" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
+<var>${resp}</var>
+<status status="PASS" start="2025-11-04T18:07:30.974823" elapsed="0.441387"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- GET USER NOT FOUND (id=1234) ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-04T18:07:31.416868" elapsed="0.000912"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code: ${resp.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-04T18:07:31.418434" elapsed="0.001493"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response:\n${resp.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-04T18:07:31.420630" elapsed="0.001497"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-04T18:07:31.423705" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2025-11-04T18:07:31.423967" level="FAIL">401 != 404</msg>
+<arg>${resp.status_code}</arg>
+<arg>404</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="FAIL" start="2025-11-04T18:07:31.422693" elapsed="0.001651">401 != 404</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.text}</arg>
+<arg>${EXP_EMPTY_BODY}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-11-04T18:07:31.424895" elapsed="0.000132"/>
+</kw>
+<status status="FAIL" start="2025-11-04T18:07:30.974285" elapsed="0.451372">401 != 404</status>
+</test>
+<status status="FAIL" start="2025-11-04T18:07:30.402765" elapsed="1.024638"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Get User" id="s1" pass="1" fail="1" skip="0">Get User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
