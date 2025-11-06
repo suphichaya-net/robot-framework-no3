@@ -1,3 +1,4 @@
 robotframework
 robotframework-requests
 robotframework-jsonlibrary
+urllib3==1.26.18
