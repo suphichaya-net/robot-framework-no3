@@ -36,6 +36,7 @@ pipeline {
             steps {
                 echo 'Publishing report...'
                 archiveArtifacts artifacts: 'testsuite/results/**', allowEmptyArchive: true
+                robot outputPath: 'testsuite/results'
             }
         }
     }

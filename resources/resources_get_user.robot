@@ -3,14 +3,10 @@ Library    RequestsLibrary
 Library    JSONLibrary
 Resource   ../variables/variables_get_user.robot
 
-# *** Keywords ***
-# Create ReqRes Session
-#     Create Session    reqres    ${BASE_URL}    verify=${FALSE}
-
 *** Keywords ***
 Create ReqRes Session
     ${headers}=    Create Dictionary    x-api-key=${API_KEY}
-    Create Session    reqres    ${BASE_URL}    headers=${headers}    verify=${FALSE}
+    Create Session    reqres    ${BASE_URL}    headers=${headers}    verify=${TRUE}
 
 Get User Profile
     ${resp}=    Get On Session    reqres    ${USER_PATH}
