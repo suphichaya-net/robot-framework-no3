@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Checkout Code From Git') {
             steps {
-                echo '📦 Checkout code from Git'
+                echo 'Start checkout code from Git...'
                 git branch: 'main', url: 'https://github.com/suphichaya-net/robot-framework-no3.git'
             }
         }
 
         stage('Install Robot Dependencies') {
             steps {
-                echo '🐍 Setting up Python & Robot Framework...'
+                echo 'Start set up Python & Robot Framework...'
                 sh '''
                     python3 -m venv .venv
                     . .venv/bin/activate
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Run Robot Tests') {
             steps {
-                echo '🤖 Running Robot Framework tests...'
+                echo 'Running Robot Framework tests...'
                 sh '''
                     . .venv/bin/activate
                     mkdir -p testsuite/results
@@ -34,18 +34,15 @@ pipeline {
 
         stage('Publish Robot Reports') {
             steps {
-                echo '📊 Publishing Robot Framework report...'
+                echo 'Publishing report...'
                 archiveArtifacts artifacts: 'testsuite/results/**', allowEmptyArchive: true
-
-                // ถ้าคุณติดตั้งปลั๊กอิน Robot Framework Plugin ใน Jenkins แล้ว
-                robot outputPath: 'testsuite/results'
             }
         }
     }
 
     post {
         always {
-            echo "✅ Pipeline finished (clean workspace)"
+            echo "Pipeline finished (clean workspace)"
             cleanWs()
         }
     }
